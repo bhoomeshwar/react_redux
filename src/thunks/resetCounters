@@ -1,0 +1,9 @@
+import {actions as reddyActions} from '../dux/reddy-reducer';
+import {actions as rakeshActions} from '../dux/rakesh-reducer';
+
+export function resetCounters() {
+    return (dispatch) => {
+        dispatch(reddyActions.resetReddyCounter);
+        dispatch(rakeshActions.resetRakeshCounter);
+    }
+}

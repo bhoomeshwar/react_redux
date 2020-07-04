@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import DisplayCounter from '../views/display-counter';
 import {actions as reddyActions, selectors as reddySelectors} from '../dux/reddy-reducer';
 import {actions as rakeshActions, selectors as rakeshSelectors} from '../dux/rakesh-reducer';
+import {resetCounters} from '../thunks/resetCounters';
 
 function mapStateToProps(state) {
     return {
@@ -12,12 +13,9 @@ function mapStateToProps(state) {
     };
 }
 
-const mapDispatchToProps = (dispatch) => ({
-    resetCounters: () => {
-        dispatch(reddyActions.resetReddyCounter);
-        dispatch(rakeshActions.resetRakeshCounter);
-    }
-});
+const mapDispatchToProps = {
+    resetCounters
+};
 
 const DisplayCounterContainer = connect(
     mapStateToProps,

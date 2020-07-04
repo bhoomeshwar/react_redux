@@ -37,7 +37,6 @@ function reddyReducer(state = DEFAULT_STATE, action) {
     }
 
     if (action.type === TOGGLE_REDDY_COUNTER) {
-        console.log('here');
         return {
             ...state,
             showReddyCounter: !state.showReddyCounter
